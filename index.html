@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alcon Auto Spares - Genuine Parts</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="container navbar">
+    <div class="logo">Alcon Auto Spares</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Parts</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <h1>Genuine Auto Spares for Every Car</h1>
+    <p>Toyota | Nissan | Ford | Isuzu - Lusaka & Countrywide Delivery</p>
+    <a href="https://wa.me/260977704769?text=Hi Alcon Auto, I need a quote for" class="btn-yellow">Get Quote on WhatsApp</a>
+  </div>
+</section>
+
+<section class="products-section" id="products">
+  <div class="container">
+    <h2>Our Products</h2>
+    
+    <div class="category-grid">
+      <div class="cat-card" onclick="filterParts('engine')"><h3>Engine Parts</h3><p>Pistons, filters, belts</p></div>
+      <div class="cat-card" onclick="filterParts('brakes')"><h3>Brake System</h3><p>Pads, discs, calipers</p></div>
+      <div class="cat-card" onclick="filterParts('suspension')"><h3>Suspension</h3><p>Shocks, arms, joints</p></div>
+      <div class="cat-card" onclick="filterParts('electrical')"><h3>Electrical</h3><p>Battery, alternator, lights</p></div>
+    </div>
+
+    <input type="text" id="search" placeholder="Search spare part... e.g Hilux brake pads" onkeyup="searchParts()">
+
+    <div class="parts-grid" id="partsGrid">
+      <!-- JS will load here -->
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Need a part fast?</h2>
+    <p>Send us your Car Model + Chassis No on WhatsApp, we find it in 24hrs</p>
+    <a href="https://wa.me/260977704769?text=Hi Alcon, I need a part for my" class="btn-dark">Chat on WhatsApp</a>
+    <p style="margin-top:15px;">📍 Lusaka | ☎️ 0977 704769</p>
+  </div>
+</section>
+
+<footer>© 2025 Alcon Auto Spares - All Rights Reserved</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
