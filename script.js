@@ -1,31 +1,24 @@
-const parts = [
-  {name:"Toyota Hilux Oil Filter", cat:"engine", price:"K250", img:"https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=400"},
-  {name:"Front Brake Pads - Corolla", cat:"brakes", price:"K450", img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=400"},
-  {name:"Shock Absorber - Navara", cat:"suspension", price:"K1200", img:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=400"},
-  {name:"12V Battery 75Ah", cat:"electrical", price:"K1800", img:"https://images.unsplash.com/photo-1551524559-8af4e6624178?q=80&w=400"},
-  {name:"Fan Belt - Isuzu", cat:"engine", price:"K350", img:"https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=400"},
-  {name:"Brake Disc - Prado", cat:"brakes", price:"K950", img:"https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=400"},
+const parts=[
+ {name:"Oil Filter - Toyota/Nissan",f:"engine",price:"K180",img:"https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400"},
+ {name:"Air Filter Hilux D4D",f:"engine",price:"K350",img:"https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400"},
+ {name:"Front Brake Pads",f:"brakes",price:"K550",img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400"},
+ {name:"Brake Disc Rotor",f:"brakes",price:"K950",img:"https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400"},
+ {name:"Shock Absorber",f:"suspension",price:"K1350",img:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400"},
+ {name:"Engine Oil 5W-30 5L",f:"oils",price:"K650",img:"https://images.unsplash.com/photo-1551524559-8af4e6624178?w=400"},
+ {name:"Spark Plug Set",f:"electrical",price:"K320",img:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400"},
+ {name:"Fan Belt",f:"engine",price:"K380",img:"https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400"},
 ];
-
-const grid = document.getElementById('partsGrid');
-
-function display(list){
-  grid.innerHTML = "";
-  list.forEach(p=>{
-    const wa = `https://wa.me/260977704769?text=Hi Alcon, I want ${encodeURIComponent(p.name)} - ${p.price}`;
-    grid.innerHTML += `<div class="part"><img src="${p.img}"><div class="info"><h3>${p.name}</h3><div class="price">${p.price}</div><a href="${wa}" target="_blank" class="btn">Order on WhatsApp</a></div></div>`;
-  });
+const grid=document.getElementById('grid');
+const search=document.getElementById('search');
+let cur='all';
+function draw(){
+ const q=search.value.toLowerCase();
+ grid.innerHTML='';
+ parts.filter(p=>(cur==='all'||p.f===cur)&&p.name.toLowerCase().includes(q)).forEach(p=>{
+  const wa=`https://wa.me/260763416129?text=Hello ALCON LUSAKA, I need ${encodeURIComponent(p.name)} ${p.price}`;
+  grid.innerHTML+=`<div class="card"><img src="${p.img}"><div class="info"><h4>${p.name}</h4><div class="price">${p.price}</div><a class="btn-order" href="${wa}" target="_blank">Order 0763416129</a></div></div>`;
+ });
 }
-
-function filterParts(cat){
-  document.querySelectorAll('.cat-card').forEach(c=>c.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  display(parts.filter(p=>p.cat===cat));
-}
-
-function searchParts(){
-  const q = document.getElementById('search').value.toLowerCase();
-  display(parts.filter(p=>p.name.toLowerCase().includes(q)));
-}
-
-display(parts); // initial load
+document.querySelectorAll('.filter').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');cur=b.dataset.f;draw();}});
+search.oninput=draw;
+draw();

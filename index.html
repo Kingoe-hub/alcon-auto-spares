@@ -3,59 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alcon Auto Spares - Genuine Parts</title>
+<title>ALCON AUTOMOTIVE LTD | Wholesale & Retail - Lusaka</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="top">
-  <div class="container navbar">
-    <div class="logo">Alcon Auto Spares</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#products">Parts</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<div class="topbar">
+  <div class="container nav">
+    <div class="logo">ALCON <span>AUTOMOTIVE LTD</span></div>
+    <div><span class="loc">LUSAKA • Wholesale & Retail</span> <a class="btn-wa" href="https://wa.me/260763416129">0763416129</a></div>
   </div>
-</header>
+</div>
 
-<section class="hero" id="home">
+<section class="hero">
   <div class="container">
-    <h1>Genuine Auto Spares for Every Car</h1>
-    <p>Toyota | Nissan | Ford | Isuzu - Lusaka & Countrywide Delivery</p>
-    <a href="https://wa.me/260977704769?text=Hi Alcon Auto, I need a quote for" class="btn-yellow">Get Quote on WhatsApp</a>
-  </div>
-</section>
-
-<section class="products-section" id="products">
-  <div class="container">
-    <h2>Our Products</h2>
-    
-    <div class="category-grid">
-      <div class="cat-card" onclick="filterParts('engine')"><h3>Engine Parts</h3><p>Pistons, filters, belts</p></div>
-      <div class="cat-card" onclick="filterParts('brakes')"><h3>Brake System</h3><p>Pads, discs, calipers</p></div>
-      <div class="cat-card" onclick="filterParts('suspension')"><h3>Suspension</h3><p>Shocks, arms, joints</p></div>
-      <div class="cat-card" onclick="filterParts('electrical')"><h3>Electrical</h3><p>Battery, alternator, lights</p></div>
+    <div class="badge">WHOLESALE & RETAIL • LUSAKA</div>
+    <h1>GENUINE AUTO<br><span>SPARE PARTS</span></h1>
+    <p>Wholesale & Retail • Lusaka — Best prices for garages, shops, fleet owners & walk-in customers.</p>
+    <div>
+      <a href="#shop" class="btn btn-primary">SHOP NOW</a>
+      <a href="https://wa.me/260763416129?text=Hello ALCON - Wholesale Enquiry" class="btn btn-outline">CONTACT US</a>
     </div>
-
-    <input type="text" id="search" placeholder="Search spare part... e.g Hilux brake pads" onkeyup="searchParts()">
-
-    <div class="parts-grid" id="partsGrid">
-      <!-- JS will load here -->
-    </div>
+    <div class="hero-contact">📍 Sparepro Building, Next to Times of Zambia Printpark, Freedom Way, 1st Floor, #6 - Lusaka | 📞 0763416129 / 0977 759624</div>
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <div class="container">
-    <h2>Need a part fast?</h2>
-    <p>Send us your Car Model + Chassis No on WhatsApp, we find it in 24hrs</p>
-    <a href="https://wa.me/260977704769?text=Hi Alcon, I need a part for my" class="btn-dark">Chat on WhatsApp</a>
-    <p style="margin-top:15px;">📍 Lusaka | ☎️ 0977 704769</p>
-  </div>
-</section>
+<div class="wholesale">WHOLESALE & RETAIL DEALERS - Special bulk pricing for garages, resellers and fleet owners</div>
 
-<footer>© 2025 Alcon Auto Spares - All Rights Reserved</footer>
+<div class="container" id="shop">
+  <div class="search"><input id="search" placeholder="Search: e.g. Hilux filter, brake pads..."></div>
+  <div class="filters">
+    <button class="filter active" data-f="all">All</button>
+    <button class="filter" data-f="engine">Engine & Filters</button>
+    <button class="filter" data-f="brakes">Brakes</button>
+    <button class="filter" data-f="suspension">Suspension</button>
+    <button class="filter" data-f="oils">Oils</button>
+    <button class="filter" data-f="electrical">Electrical</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<footer>
+  <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+    <div><h3>ALCON AUTOMOTIVE LTD</h3><p><b>WHOLESALE & RETAIL</b><br>Sparepro Building, Next to Times of Zambia Printpark, Freedom Way, 1st Floor, #6, Lusaka, Zambia</p></div>
+    <div><h4>Call / WhatsApp</h4><p><b>0763416129</b><br>0977 759624 / 0977 831548</p></div>
+    <div><h4>Hours</h4><p>Mon-Sat 08:00-17:30<br>Sun Closed</p></div>
+  </div>
+  <div class="copy">© 2026 ALCON AUTOMOTIVE LTD - Wholesale & Retail - Lusaka</div>
+</footer>
 
 <script src="script.js"></script>
 </body>
